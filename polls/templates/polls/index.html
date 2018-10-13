@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 style="text-align: center;">Login</h2>
+    </div>
+</div>
+
+<div class="container">
+  <form action="logar/" method="post">{% csrf_token %}
+    
+    <div class="col-md-6 col-md-offset-3 col-sm-12" ">
+      <div class="img-logo">
+      <img src="{% static 'polls/img/logo.png'%}" style="margin: 0 auto; width: 100%;">	
+      </div>
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">  
+      <label for="senha">Senha:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="senha">
+    <div class="checkbox">
+     <a href="http://127.0.0.1:8000/polls/cadastrar/">Cadastre-se</a>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">Enviar</button>
+   </div>
+   
+  </form>
+</div>

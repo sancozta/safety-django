@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="row">
+    <div class="col-md-12">
+        <h2 style="text-align: center;">Criar Usuário</h2>
+    </div>
+</div>
+
+<form action="cadastro/" method="post">{% csrf_token %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input name="nome" type="nome" class="form-control" placeholder="Nome">
+                <label for="email">Email</label>
+                <input name="email" type="email" class="form-control" placeholder="Email">
+                <label for="senha">Senha</label>
+                <input name="senha" type="password" class="form-control" placeholder="Senha">
+                <label for="arduino">Arduino</label>
+                <input name="arduino" type="text" class="form-control" placeholder="Arduino">
+            </div>
+            <input type="submit" class="btn btn-success btn-block" value="Salvar">
+        </div>
+    </div>
+</form>
