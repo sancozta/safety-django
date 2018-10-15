@@ -1,0 +1,47 @@
+body {
+    background: url("../img/fundob.jpg");
+    background-size: cover;
+}
+
+div, form, label, a {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.img-logo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.img-file {
+    width: 300px;
+    height: 200px;
+}
+
+.font-title {
+    margin-top: 100px;
+}
+
+.font-register, .font-register:hover {
+    color: #FFFFFF;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.row {
+    color: #FFFFFF;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.panel-color {
+    background-color: #5cb85c !important;
+}
+
+.panel {
+    background-color: #5cb85c !important;
+}
+
+dl {
+    margin-bottom: 0px !important;
+}
+
