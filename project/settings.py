@@ -87,5 +87,8 @@ USE_TZ = True
 # Static files
 STATIC_URL = '/static/'
 
+# Disable Static Heroku
+DISABLE_COLLECTSTATIC=1
+
 # Activate Django Heroku.
 django_heroku.settings(locals())
