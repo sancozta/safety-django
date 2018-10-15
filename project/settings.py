@@ -33,6 +33,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware
 ]
 
 # Rout Url Config
@@ -85,10 +86,19 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL  = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Disable Static Heroku
-DISABLE_COLLECTSTATIC=1
+# DISABLE_COLLECTSTATIC = 1
+
+# Simplified static file serving. 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Activate Django Heroku.
 django_heroku.settings(locals())
