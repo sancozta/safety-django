@@ -95,7 +95,7 @@ STATICFILES_DIRS = (
 )
 
 # Disable Static Heroku
-# DISABLE_COLLECTSTATIC = 1
+DISABLE_COLLECTSTATIC = 1
 
 # Simplified static file serving. 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
