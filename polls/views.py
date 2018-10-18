@@ -44,10 +44,10 @@ def RegisterUser(req):
         }
         Headers         = { "Authorization": "Basic YWRtaW46c2VjcmV0" }
         ResponseRequest = requests.post(Url, data=Body, headers=Headers)
-        if ResponseRequest.message == "Create User Sucess":
-            return redirect("/")
-        else:
-            return redirect("/register")
+        #if ResponseRequest.message == "Create User Sucess":
+        return redirect("/")
+        #else:
+        #    return redirect("/register")
     except Exception as err:
         return HttpResponse(err)
 
