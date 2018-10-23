@@ -11,19 +11,25 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2 class="text-center font-title">Registrar Usuário</h2>
+        <h2 class="text-center font-title">Alterar Conta</h2>
     </div>
 </div>
 
 <br/>
 
-<form action="registeruser/" method="post">
+{% for log in list %}
+
+<form action="updateuser/" method="post">
+    
     {% csrf_token %}
+
+    <input type="hidden" name="id" value="{{log.id}}">
+
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="form-group">
                 <label>Nome</label>
-                <input type="text" class="form-control" name="name" placeholder="Name">
+                <input type="text" class="form-control" name="name" placeholder="Name" value="{{log.name}}">
             </div>
         </div>
     </div>
@@ -31,7 +37,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Email">
+                <input type="email" class="form-control" name="email" placeholder="Email" value="{{log.email}}">
             </div>
         </div>
     </div>
@@ -39,7 +45,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="password" class="form-control" name="password" placeholder="Password" value="{{log.password}}">
             </div>
         </div>
     </div>
@@ -47,24 +53,25 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="form-group">
                 <label>Arduino</label>
-                <input type="text" class="form-control" name="arduino" placeholder="Arduino">
+                <input type="text" class="form-control" name="arduino" placeholder="Arduino" value="{{log.arduino}}">
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center">
-            <div class="form-group">
-                <a class="font-register" href="/">Logar</a>
-            </div>
-        </div>
-    </div>
-
+    <br/>
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="form-group">
-                <button type="submit" class="btn btn-success btn-block">Registrar</button>
+                <button type="submit" class="btn btn-success btn-block">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="form-group">
+                <button type="submit" class="btn btn-warning btn-block">Voltar</button>
             </div>
         </div>
     </div>
 </form>
+
+{% endfor %}
